@@ -168,11 +168,11 @@ services:
         kafkacat -b kafka:9092 -o beginning -G json-consumer json
     links:
       - kafka
-topic-creator:
-    build: .
-    depends_on:
-      - kafka
-    restart: on-failure
-    networks:
-      - default
-    command: ["./wait-for-kafka.js", "node", "topics.js"]
+  topic-creator:
+      build: .
+      depends_on:
+        - kafka
+      restart: on-failure
+      networks:
+        - default
+      command: ["./wait-for-kafka.js", "node", "topics.js"]
