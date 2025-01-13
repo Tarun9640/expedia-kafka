@@ -2,7 +2,7 @@ import {Kafka} from 'kafkajs';
 
 const kafka = new Kafka({
     clientId: 'my-app',
-    brokers: ['localhost:9092'],  // Changed to use internal Docker network name
+    brokers: ['kafka:9092'],  // Changed to use internal Docker network name
     connectionTimeout: 8000,
     retry: {
         initialRetryTime: 300,
